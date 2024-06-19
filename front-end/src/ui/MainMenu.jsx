@@ -3,7 +3,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export default function MainMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -22,11 +22,12 @@ export default function MainMenu() {
         edge="start"
         color="inherit"
         aria-label="menu"
+        sx={{ mr: 2 }}
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{ mr: 2 }}
+      
       >
         <MenuIcon />
       </IconButton>
@@ -39,12 +40,28 @@ export default function MainMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose} component={Link} to="/" divider>
-          Página inicial
+        <MenuItem
+          onClick={handleClose}
+          component={Link} to="/" divider>
+          Pagina Inicial
         </MenuItem>
 
-        <MenuItem onClick={handleClose} component={Link} to="/customers">
+        <MenuItem
+          onClick={handleClose}
+          component={Link} to="/customers">
           Clientes
+        </MenuItem>
+
+        <MenuItem
+          onClick={handleClose}
+          component={Link} to="/cars">
+          Carros
+        </MenuItem>
+
+        <MenuItem
+          onClick={handleClose}
+          component={Link} to="/prova">
+          Sobre
         </MenuItem>
       </Menu>
     </div>

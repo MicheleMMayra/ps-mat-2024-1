@@ -23,6 +23,7 @@ controller.retriveAll = async function (req, res) {
     try {
      
         const result = await prisma.customer.findMany()
+              orderBy: { nema: 'asc'}
 
         //HTTP 200: ok (implícito)
         res.send(result)

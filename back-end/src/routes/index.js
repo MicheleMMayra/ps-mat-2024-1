@@ -1,9 +1,11 @@
-import { Router } from "express";
-const router = Router();
+let tempData = {}; // Variável para armazenar
 
-/* GET home page. */
-router.get("/", function (req, res) {
-  res.send("Olá mundo!");
+router.post('/', (req, res) => {
+    const newData = req.body;
+    tempData = newData; // Armazena os valores temporariamente 
+    res.status(200).send('Dados armazenados com sucesso');
 });
 
-export default router;
+router.get('/data', (req, res) => {
+    res.status(200).json(tempData); // Retorna os valor armazenado
+});

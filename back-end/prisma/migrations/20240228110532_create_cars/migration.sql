@@ -12,3 +12,6 @@ CREATE TABLE "Car" (
 
     CONSTRAINT "Car_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Car_plates_key" ON "Car"("plates");
